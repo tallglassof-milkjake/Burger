@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 const exphbs = require("express-handlebars");
 
 const app = express();
@@ -12,8 +11,7 @@ app.use(express.json);
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-
-app.use("public", express.static(path.join(__dirname, "public")));
+app.use(express.static("public"));
 
 const routes = require("./controllers/burgers_controller.js");
 

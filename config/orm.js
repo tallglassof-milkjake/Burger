@@ -34,7 +34,7 @@ function printQuestionMarks(num) {
   return arr.toString();
 }
 
-const orm = {
+let orm = {
     selectAll: function(tableInput, cb) {
         let queryString = `SELECT * FROM ${tableInput};`;
         connection.query(queryString, function(err, res) {
